@@ -1,19 +1,53 @@
 ---
+import Main from '../layouts/Main.astro';
+import { Image } from "astro:assets";
+
  // Astro Component Script Section
-const profilePicture = "https://i.imgur.com/4FvOKcv.jpeg";
+const sadCatMeme = "https://i.imgur.com/4FvOKcv.jpeg";
+import profilePicture from '../assets/images/i1.jpg';
 ---
 
 <!-- Astro Component Template Section -->
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Hello World</h1>
-		<img alt="Profile Img" src={profilePicture} width="500px" height="500px"/>
-	</body>
-</html>
+
+<Main>
+	<div class="profile">
+		<Image class="profile_picture" src={profilePicture} width="100" height="100" alt="Profile Img"/>
+		<div class="profile_details">
+			<h1>Mohammad Rashed</h1>
+			<h2>CEO OF SAD CAT MEMES</h2>
+			<p>
+				Helping people all across the world enjoy some high quality sad cat memes
+			</p>
+			<Image src={sadCatMeme} width="350" height="350" alt="SAD CAT"/>
+		</div>
+	</div>
+</Main>
+
+
+<style>
+
+html {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.profile{
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	padding: 1rem 0 3rem 0;
+}
+
+.profile_picture {
+	border-radius: 50%;
+	margin: 0 2rem 1rem 0;
+}
+.profile_details {
+	flex: 1 0 300px;
+}
+
+.profile_details  h1 {
+	margin-top: 0;
+	color: red;
+}
+
+
+</style>
