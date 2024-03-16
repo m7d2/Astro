@@ -16,6 +16,41 @@ import "../styles/global.css";
 		<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+		<script is:inline>
+			const DARK_THEME_CLASS = "dark";
+    		const COLOR_MODE = "COLOR_MODE";
+    		const LIGHT_THEME = "LIGHT";
+    		const DARK_THEME = "DARK";
+
+			const rootElement = document.documentElement;
+
+			const getInitialColorMode = () => {
+        		const previouslySavedColorMode = window.localStorage.getItem(COLOR_MODE);
+
+        		if(previouslySavedColorMode){
+        		    return previouslySavedColorMode
+        		}
+			
+        		if(window.matchMedia("prefers-color-scheme: dark").matches) {
+        		    return DARK_THEME;
+        		}
+			
+        		return LIGHT_THEME;
+    		}
+
+			 const initialColorMode = getInitialColorMode();
+
+			const setInitialColorMode = (mode) => {
+        		// set required class on the root element
+        		if(mode === LIGHT_THEME) {
+        		    rootElement.classList.remove(DARK_THEME_CLASS);
+        		} else {
+        		    rootElement.classList.add(DARK_THEME_CLASS);
+        		}
+   			 }
+
+			 setInitialColorMode(initialColorMode);
+		</script>
 	</head>
 	<body>
         <main>

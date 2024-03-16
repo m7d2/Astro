@@ -53,33 +53,6 @@
     // root element
     const rootElement = document.documentElement;
 
-    const getInitialColorMode = () => {
-        const previouslySavedColorMode = window.localStorage.getItem(COLOR_MODE);
-
-        if(previouslySavedColorMode){
-            return previouslySavedColorMode
-        }
-
-        if(window.matchMedia("prefers-color-scheme: dark").matches) {
-            return DARK_THEME;
-        }
-
-        return LIGHT_THEME;
-    }
-
-    const initialColorMode = getInitialColorMode();
-
-    const setInitialColorMode = (mode: string) => {
-        // set required class on the root element
-        if(mode === LIGHT_THEME) {
-            rootElement.classList.remove(DARK_THEME_CLASS);
-        } else {
-            rootElement.classList.add(DARK_THEME_CLASS);
-        }
-    }
-
-    setInitialColorMode(initialColorMode);
-
     if(toggle){
         toggle.addEventListener('click', () => {
             rootElement.classList.toggle(DARK_THEME_CLASS);
@@ -89,6 +62,4 @@
             window.localStorage.setItem(COLOR_MODE, colorMode)
         });
     }
-
-
 </script>
