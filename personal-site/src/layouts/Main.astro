@@ -1,6 +1,11 @@
+---
+import Footer from "../components/Footer.astro";
+import NavigationBar from "../components/NaviggationBar.astro";
 
+import "../styles/global.css";
+---
 
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -8,12 +13,37 @@
 		<meta name="generator" content={Astro.generator} />
         <meta name="description" content="Mohammad Rashed's Website">
 		<title>Astro</title>
+		<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
         <main>
+			<NavigationBar />
             <!-- Content of the page -->
             <slot />
+			<Footer />
         </main>
 	</body>
 </html>
+
+<!-- is:global is an attribute to apply the style globally -->
+<!-- <style is:global>
+	h1 {
+		font-size: 2.5rem;
+		line-height: 1;
+	}
+
+	h1 + h2 {
+		font-size: 1.1rem;
+		margin-top: -1.4rem;
+		opacity: 0.9;
+		font-weight: 400;
+	}
+
+	main {
+		max-width: 40rem;
+		margin: auto;
+	}
+</style> -->
 
