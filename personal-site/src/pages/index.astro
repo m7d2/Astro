@@ -4,12 +4,13 @@ import { Image } from "astro:assets";
 
  // Astro Component Script Section
 const sadCatMeme = "https://i.imgur.com/4FvOKcv.jpeg";
-import profilePicture from '../assets/images/i1.jpg';
+const profilePicture = 'https://media1.tenor.com/m/yNMGjXsoYGUAAAAd/cat-cats.gif';
+// import profilePicture from '../assets/images/i1.jpg';
 ---
 
 <!-- Astro Component Template Section -->
 
-<Main>
+<Main title="Mohammad Rashed">
 	<div class="profile">
 		<Image class="profile_picture" src={profilePicture} width="100" height="100" alt="Profile Img"/>
 		<div class="profile_details">
@@ -18,6 +19,7 @@ import profilePicture from '../assets/images/i1.jpg';
 			<p>
 				Helping people all across the world enjoy some high quality sad cat memes
 			</p>
+			
 			<Image src={sadCatMeme} width="350" height="350" alt="SAD CAT"/>
 		</div>
 	</div>

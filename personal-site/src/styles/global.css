@@ -4,6 +4,7 @@ html {
     --grey-400: #444444;
     --grey-600: #333333;
     --grey-900: #111111;
+    --blue: #008cff;
 }
 
 html.dark {
@@ -38,3 +39,16 @@ main {
 	margin: auto;
 }
 
+p, li {
+    font-size: 1rem;
+    color: var(--grey-400);
+    opacity: 0.8;
+}
+
+li {
+    margin: 1rem 0;
+}
+
+li a {
+    color: var(--blue);
+}
