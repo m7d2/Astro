@@ -44,6 +44,26 @@ const profilePicture = 'https://media1.tenor.com/m/yNMGjXsoYGUAAAAd/cat-cats.gif
 			to: "/philosophies",
 		}
 	]}/>
+
+	<div class="featured-blogs">
+		<h3 class="featured-blogs__title">Featured Blogs</h3>
+		<p class="featured-blogs__description">Opinion pieces that will change everything you know about sad cat memes.</p>
+	</div>
+
+	<ol class="blogs">
+		<li class="blog__list">
+			<a class="blog__link" href="blogs/sadcat-meme-is-the-best">Sad Cat Memes are the new best trend to happen</a>
+		</li>
+		<li class="blog__list">
+			<a class="blog__link" href="blogs/why-sadcat-memes-are-funny">Why Cat Memes are funny</a>
+		</li>
+		<li class="blog__list">
+			<a class="blog__link" href="blogs/sadcat-memes-beats-the-mayonnaise-as-best-meme">Breaking news: Sad Cat Memes beats Patrick's Star Is mayonnaise an instrument as the best meme ever</a>
+		</li>
+		<li class="blog__list">
+			<a class="blog__link" href="blogs/bn-ducks-declare-victory">Breaking news: Ducks 🦆 declare victory over their rival enemy</a>
+		</li>
+	</ol>
 </Main>
 
 
@@ -71,5 +91,40 @@ html {
 	margin-top: 0;
 }
 
+.featured-blogs{
+	margin: 0;
+	padding: 3rem 0 0 0;
+}
 
+.featured-blogs__title {
+	font-size: 2rem;
+	color: var(--grey-900);
+}
+
+.featured-blogs__description {
+	margin-top: -1.2rem;
+}
+
+.blogs {
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.blog__list {
+	border-bottom: 1px solid var(--grey-200);
+}
+
+.blog__link {
+	opacity: 1;
+	height: 100%;
+	display: block;
+	padding: 1rem 0;
+	color: var(--grey-200);
+	text-decoration: none;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.blog__link:hover {
+	opacity: 0.7;
+}
 </style>
