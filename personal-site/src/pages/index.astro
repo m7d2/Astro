@@ -7,6 +7,13 @@ import { Image } from "astro:assets";
 const sadCatMeme = "https://i.imgur.com/4FvOKcv.jpeg";
 const profilePicture = 'https://media1.tenor.com/m/yNMGjXsoYGUAAAAd/cat-cats.gif';
 // import profilePicture from '../assets/images/i1.jpg';
+
+// Astro.glob
+const blogs = await Astro.glob<{
+	title: string
+	subtitle: string
+	poster: string
+}>("../pages/blogs/*.md");
 ---
 
 <!-- Astro Component Template Section -->
@@ -51,18 +58,13 @@ const profilePicture = 'https://media1.tenor.com/m/yNMGjXsoYGUAAAAd/cat-cats.gif
 	</div>
 
 	<ol class="blogs">
-		<li class="blog__list">
-			<a class="blog__link" href="blogs/sadcat-meme-is-the-best">Sad Cat Memes are the new best trend to happen</a>
-		</li>
-		<li class="blog__list">
-			<a class="blog__link" href="blogs/why-sadcat-memes-are-funny">Why Cat Memes are funny</a>
-		</li>
-		<li class="blog__list">
-			<a class="blog__link" href="blogs/sadcat-memes-beats-the-mayonnaise-as-best-meme">Breaking news: Sad Cat Memes beats Patrick's Star Is mayonnaise an instrument as the best meme ever</a>
-		</li>
-		<li class="blog__list">
-			<a class="blog__link" href="blogs/bn-ducks-declare-victory">Breaking news: Ducks 🦆 declare victory over their rival enemy</a>
-		</li>
+		{
+			blogs.map(blog => (
+				<li class="blog__list">
+					<a class="blog__link" href={blog.url}>{blog.frontmatter.title}</a>
+				</li>
+			))
+		}
 	</ol>
 </Main>
 
